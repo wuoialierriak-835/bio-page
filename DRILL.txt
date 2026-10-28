@@ -1,0 +1,23 @@
+SCS1.4 practice drills -- in ~/scs/practice-git/shop-page (THROWAWAY: break it freely)
+Start:  cd ~/scs/practice-git/shop-page      Read the state before and after every move:  git status
+
+THE UNDO DRILL
+  1  git log --oneline                       four commits on main, and one more line of work beside it
+  2  Delete a line of index.html in the editor and save.   git diff    (red minus = the line you took out)
+  3  git restore index.html                  the line is back -- an uncommitted change thrown away
+  4  Make a deliberately bad change, then  git commit -am "Try a wrong heading"
+  5  git revert HEAD                         a NEW commit that undoes it; write why in the message
+  6  git log --oneline                       the mistake AND the fix are both in the history -- that is honest
+
+THE BRANCH AND CONFLICT DRILL
+  7  git log --oneline --graph --all         two lines of work: main and new-prices
+  8  git diff main new-prices                both changed the same sugar line
+  9  git merge new-prices                    CONFLICT (content): Merge conflict in index.html
+ 10  Open index.html: between <<<<<<< and >>>>>>> are both versions.  Decide which price is true
+     (ask: who knows the real price?), delete the markers and the wrong line, save.
+ 11  git add index.html  then  git commit    (the message says which price won and why)
+ 12  git log --oneline --graph               the two lines joined
+
+Stuck in the middle of a merge and want out?   git merge --abort
+Want to start again from nothing?              git-practice-scs1.4 --reset
+Never:  git push --force, git reset --hard, or rm -rf on your bio page repo.
