@@ -1,0 +1,85 @@
+
+:root {
+    /* Colour palette */
+    --ink: #333333;
+    --paper: #f4f4f4;
+    --accent: #1e3a5f;
+    --surface: #ffffff;
+    --light: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+
+    /* Typography */
+    --font-main: Arial, sans-serif;
+    --text-size: 1rem;
+    --heading-size: 1.5rem;
+
+    /* Spacing */
+    --spacing: 1.25rem;
+    --radius: 0.5rem;
+}
+
+/* General page styling */
+body {
+    font-family: var(--font-main);
+    font-size: var(--text-size);
+    margin: 0;
+    padding: var(--spacing);
+    background-color: var(--paper);
+    color: var(--ink);
+}
+
+/* Main content */
+main {
+    width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    background-color: var(--accent);
+    color: var(--light);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+}
+
+/* All images must fit their containers */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Profile picture */
+header img {
+    width: 9.375rem;
+    height: 9.375rem;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Four-box layout */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: var(--spacing);
+}
+
+/* Individual boxes */
+.box {
+    background-color: var(--surface);
+    color: var(--ink);
+    padding: var(--spacing);
+    border-radius: var(--radius);
+    flex: 1 1 13.75rem;
+    box-shadow: 0 2px 5px var(--shadow);
+}
+
+/* Responsive design */
+@media (min-width: 48rem) {
+    .box {
+        flex: 1 1 40%;
+    }
+}
+
